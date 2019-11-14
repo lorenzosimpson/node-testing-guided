@@ -28,5 +28,12 @@ describe('hobbits model', () => {
             expect(hobbits[1].name).toBe('frodo')
             expect(hobbits[2].name).toBe('lorenzo')
         })
+
+        it('should return inserted hobbit', async () => {
+            let hobbit = await insert({ name: 'sam' })
+            expect(hobbit.name).toBe('sam')
+            expect(hobbit.id).toBeDefined();
+
+        })
     })
 })
